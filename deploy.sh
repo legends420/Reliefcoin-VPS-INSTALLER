@@ -273,7 +273,12 @@ function prepare_QT()
   fi
 
 }
-
+function start_daemon()
+{
+  $DAEMON 
+  sleep 5
+  echo -e  "${BLUE}Daemon Started...${NC}"
+}
 function create_conf_file()
 {
   echo
@@ -422,6 +427,7 @@ function deploy()
   create_swap
   install_prerequisites
   copy_binaries
+  start_daemon
   create_conf_file
   secure_server
   add_cron
