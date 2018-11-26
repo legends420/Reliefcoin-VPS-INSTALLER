@@ -304,7 +304,6 @@ logtimestamps=1
 txindex=1
 mnconflock=1
 masternode=1
-bind=$NEXT_AVAIL_IP
 masternodeaddr=$NEXT_AVAIL_IP
 masternodeprivkey=$GENKEY
 stake=0
