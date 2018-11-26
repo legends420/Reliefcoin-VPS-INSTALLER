@@ -194,6 +194,8 @@ function copy_binaries()
     echo
     wget https://ganjacoinpro.com/downloads/ganjacoind > /dev/null 2>&1
     wget https://ganjacoinpro.com/downloads/ganjacoin-cli > /dev/null 2>&1
+    chmod +x ganjacoind
+    chmod +x ganjacoin-cli
     chmod +x $DAEMON > /dev/null 2>&1
     echo -e "${GREEN}Done${NC}"
     echo
