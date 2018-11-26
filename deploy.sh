@@ -29,7 +29,7 @@ function set_environment()
   DAEMON="$PROJECT_FOLDER/$BINARY"
   DAEMONCLI="$PROJECT_FOLDER/$BINARYCLI"
   CONF_FILE="$DATADIR/ganjacoin.conf"
-  DAEMON_START="$DAEMON -daemon"
+  DAEMON_START="$DAEMON"
   CRONTAB_LINE="@reboot $DAEMON_START"
 }
 
@@ -47,7 +47,7 @@ function checks()
      exit 1
   fi
 
-  if [ -f /root/.Ganjaproject2 ]; then
+  if [ -f /root/.GanjaCoin ]; then
     IS_INSTALLED=true
     echo -e "${YELLOW} $PROJECT Previously installed! ${NC}"
 
