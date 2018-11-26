@@ -280,12 +280,17 @@ function create_conf_file()
   PASSWORD=$(pwgen -s 64 1)
   GENKEY=$($DAEMONCLI masternode genkey) > /dev/null 2>&1
   echo
+  echo
+  echo -e "${BLUE}Stopping Daemon to generate secure password and update conf...${NC}"
+  echo
+  sleep - 5
+  $DAEMONCLI stop
+  echo
+  sleep - 10
+  echo
   echo -e "${BLUE}Creating conf file...${NC}"
   sleep 15
-  echo
-  echo -e "${BLUE}Stopping the daemon and writing config (15 seconds)${NC}"
-  $DAEMON stop > /dev/null 2>&1
-  sleep 10
+ 
 
 cat <<EOF > $CONF_FILE
 rpcuser=$RPC_USER
