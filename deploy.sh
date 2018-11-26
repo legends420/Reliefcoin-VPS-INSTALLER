@@ -283,10 +283,9 @@ function create_conf_file()
   echo
   echo -e "${BLUE}Stopping Daemon to generate secure password and update conf...${NC}"
   echo
-  sleep - 5
   $DAEMONCLI stop
   echo
-  sleep - 10
+  sleep 10
   echo
   echo -e "${BLUE}Creating conf file...${NC}"
   sleep 15
