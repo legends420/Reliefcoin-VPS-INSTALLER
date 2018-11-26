@@ -341,7 +341,7 @@ function start_wallet()
     echo
     echo -e "${YELLOW} Final Wallet Configuration:"
     echo -e "${BLUE} Please go to your QT Wallet (Windows or Mac wallet) and close it.${NC}"
-    echo -e "${BLUE} Next, go to your data folder and double-click on ${GREEN}Ganjaproject2${BLUE} (see methods below)${NC}"
+    echo -e "${BLUE} Next, go to your data folder and double-click on ${GREEN}GanjaCoin${BLUE} (see methods below)${NC}"
     echo
     echo -e " In Windows: Click the start button and type %APPDATA% and press ENTER, then double-click on the GanjaCoin folder"
     echo -e " In MacOS: with your file explorer, navigate to /Users/USERNAME/Library/Application Support/GanjaCoin"
@@ -363,14 +363,6 @@ function start_wallet()
     echo -e "${BLUE} Starting Blockchain Synchronization...${NC}"
     sleep 10
 
-    BLOCKS=$(curl -s http://explorer.ganjacoinpro.com/api/getblockcount)
-    CURBLOCK=$($DAEMONCLI  getinfo | grep blocks | awk {'print $3'} | tr -d ',')
-
-    while [ $CURBLOCK -lt ${BLOCKS-200} ]; do
-      CURBLOCK=$($DAEMONCLI  getinfo | grep blocks | awk {'print $3'} | tr -d ',')
-      echo -ne "${BLUE} syncing${YELLOW} $CURBLOCK ${BLUE}out of${YELLOW} $BLOCKS ${BLUE}...${NC}      \r"
-      sleep 2
-    done
     echo
     echo -e "${GREEN} Blockchain synced!${NC}"
     echo
