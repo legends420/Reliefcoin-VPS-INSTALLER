@@ -212,9 +212,9 @@ rpcconnect=127.0.0.1
 rpcallowip=127.0.0.1
 addnode=140.82.2.143
 EOF
-      echo -e "${BLUE}Starting daemon ...(5 seconds)${NC}"
+      echo -e "${BLUE}Starting daemon ...(60 seconds Allow time to download chain)${NC}"
       $DAEMON &
-      sleep 5
+      sleep 60
 
 #      sed -i "s/server=1/server=0/" .GanjaCoin/ganjacoin.conf
     else
@@ -273,12 +273,7 @@ function prepare_QT()
   fi
 
 }
-function start_daemon()
-{
-  $DAEMON 
-  sleep 5
-  echo -e  "${BLUE}Daemon Started...${NC}"
-}
+
 function create_conf_file()
 {
   echo
@@ -427,7 +422,6 @@ function deploy()
   create_swap
   install_prerequisites
   copy_binaries
-  start_daemon
   create_conf_file
   secure_server
   add_cron
