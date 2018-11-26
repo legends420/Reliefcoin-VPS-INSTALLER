@@ -373,30 +373,7 @@ function start_wallet()
     done
     echo
     echo -e "${GREEN} Blockchain synced!${NC}"
-    echo -e "${BLUE} Starting Masternode Synchronization...${NC}"
-    echo -e "${GREEN} When it says ${YELLOW}MASTERNODE Waiting for remote activation!${NC}"
-    echo -e "${GREEN} Go to your Masternode Tab in your QT Wallet, Click on your new Masternode and click on Start."
     echo
-    echo
-    
-    MNSTAT[0]="MASTERNODE_PRE_ENABLED"
-    MNSTAT[1]="MASTERNODE_ENABLED"
-    MNSTAT[2]="MASTERNODE_EXPIRED"
-    MNSTAT[3]="MASTERNODE_OUTPOINT_SPENT"
-    MNSTAT[4]="MASTERNODE_INPUT_TOO_NEW"
-    MNSTAT[6]="MASTERNODE_REMOVE"
-    MNSTAT[7]="MASTERNODE_WATCHDOG_EXPIRED"
-    MNSTAT[8]="MASTERNODE_POSE_BAN"
-    MNSTAT[9]="MASTERNODE_VIN_SPENT"
-    MNSTAT[10]="MASTERNODE_POS_ERROR"
-    MNSTATUS=0
-
-    while [ $MNSTATUS -ne 10 ]; do
-      MNSTATUS=$($DAEMONCLI masternode status | grep status | awk {'print $3'} | tr -d ',')
-      echo -ne "${YELLOW} >Masternode Status : ${BLUE}${MNSTAT[MNSTATUS]}${NC} \r"
-      sleep 5
-    done
-
     echo -e "${BLUE} Congratulations, you've set up your masternode!${NC}"
 
   else
