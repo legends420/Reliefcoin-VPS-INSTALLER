@@ -201,16 +201,16 @@ function copy_binaries()
   if [ -f $DAEMON ]; then
       mkdir $DATADIR
 cat <<EOF > $CONF_FILE
-listen=1
-server=0
-maxconnections=500
 rpcuser=yourusername
 rpcpassword=9mRoJDqk1xa8XvOdL9NZhEdhTWzpnhhuT7
-port=11710
 rpcport=49101
-rpcconnect=127.0.0.1
-rpcallowip=127.0.0.1
-addnode=140.82.2.143
+port=11710
+server=1
+listen=1
+daemon=1
+logtimestamps=1
+stake=0
+staking=0
 EOF
       echo -e "${BLUE}Starting daemon ...(60 seconds Allow time to download chain)${NC}"
       $DAEMON &
@@ -290,18 +290,17 @@ function create_conf_file()
 cat <<EOF > $CONF_FILE
 rpcuser=$RPC_USER
 rpcpassword=$PASSWORD
-rpcallowip=localhost
-rpcport=$RPC_PORT
+rpcport=49101
 port=11710
 externalip=$NEXT_AVAIL_IP
 server=1
 listen=1
 daemon=1
 logtimestamps=1
-txindex=$TX_OUTPUT
-maxconnections=500
-mnconflock=0
+txindex=1
+mnconflock=1
 masternode=1
+bind=$NEXT_AVAIL_IP
 masternodeaddr=$NEXT_AVAIL_IP
 masternodeprivkey=$GENKEY
 stake=0
