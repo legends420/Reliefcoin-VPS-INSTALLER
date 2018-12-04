@@ -203,8 +203,8 @@ function copy_binaries()
 cat <<EOF > $CONF_FILE
 rpcuser=yourusername
 rpcpassword=9mRoJDqk1xa8XvOdL9NZhEdhTWzpnhhuT7
-rpcport=49101
-port=11710
+port=12311
+rpcport=12310
 server=1
 listen=1
 daemon=1
@@ -294,8 +294,8 @@ function create_conf_file()
 cat <<EOF > $CONF_FILE
 rpcuser=$RPC_USER
 rpcpassword=$PASSWORD
-rpcport=49101
-port=11710
+port=12311
+rpcport=12310
 externalip=$NEXT_AVAIL_IP
 server=1
 listen=1
