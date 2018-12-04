@@ -19,16 +19,16 @@ function set_environment()
   BINARY="ganjacoind"
   BINARYCLI="ganjacoin-cli"
   NEXT_AVAIL_IP=$(curl -s4 icanhazip.com)
-  DATADIR="$HOME/.GanjaCoin"
+  DATADIR="$HOME/.MRJA"
 
   TMP_FOLDER=$(mktemp -d)
   RPC_USER="$PROJECT-Admin"
-  MN_PORT=11710
-  RPC_PORT=49101
+  MN_PORT=12311
+  RPC_PORT=12310
 
   DAEMON="$PROJECT_FOLDER/$BINARY"
   DAEMONCLI="$PROJECT_FOLDER/$BINARYCLI"
-  CONF_FILE="$DATADIR/ganjacoin.conf"
+  CONF_FILE="$DATADIR/mrja.conf"
   DAEMON_START="$DAEMON"
   CRONTAB_LINE="@reboot $DAEMON_START"
 }
@@ -170,7 +170,7 @@ function install_prerequisites()
     #pre-reqs for running the daemon file
     sudo apt update > /dev/null 2>&1
     echo -ne "${YELLOW} [###               ]\r"
-    sudo apt install -y pwgen libwww-perl build-essential libtool automake autotools-dev autoconf pkg-config libssl-dev libgmp3-dev libevent-dev bsdmainutils libdb++-dev libminiupnpc-dev libboost-all-dev libqrencode-dev unzip libzmq3-dev > /dev/null 2>&1
+    sudo apt install -y pwgen libwww-perl build-essential libtool automake autotools-dev autoconf libevent-pthreads-2.0-5 pkg-config libssl-dev libgmp3-dev libevent-dev bsdmainutils libdb++-dev libminiupnpc-dev libboost-all-dev libqrencode-dev unzip libzmq3-dev > /dev/null 2>&1
     echo -ne " [########          ]\r"
     sudo add-apt-repository -y ppa:bitcoin/bitcoin > /dev/null 2>&1
     echo -ne " [##############    ] \r"
