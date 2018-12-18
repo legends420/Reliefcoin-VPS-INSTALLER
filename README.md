@@ -33,7 +33,7 @@ https://www.ganjacoinpro.com/ <br />
 2.1 Choose your VPS
 
 VPS server required: We recommend the following specifications:
-- www.vultr.com
+- https://www.vultr.com/?ref=7490761
 - $5 Basic cloud computer package
 - Choose any location close to you for optimal connectivity to your server
 - Ubuntu 16.04.x64
