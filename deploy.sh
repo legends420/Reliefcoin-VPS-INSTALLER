@@ -13,7 +13,7 @@ clear
 function set_environment()
 {
   #Variable Declaration
-  VERSION="1.1.0.0"
+  VERSION="1.1.1.2"
   PROJECT="GanjaCoin"
   PROJECT_FOLDER="$HOME/ganja"
   BINARY="ganjacoind"
@@ -47,7 +47,7 @@ function checks()
      exit 1
   fi
 
-  if [ -f /root/.GanjaCoin ]; then
+  if [ -f /root/.MRJA ]; then
     IS_INSTALLED=true
     echo -e "${YELLOW} $PROJECT Previously installed! ${NC}"
 
@@ -59,8 +59,8 @@ function checks()
     else
       echo
       echo -e "${BLUE} Deleting existing files...${NC}"
-      rm -R /root/.GanjaCoin > /dev/null 2>&1
-      rm -R /root/coins/GanjaCoin > /dev/null 2>&1
+      rm -R /root/.MRJA > /dev/null 2>&1
+      rm -R /root/coins/MRJA > /dev/null 2>&1
       rm -R /root/ganja > /dev/null 2>&1
       sleep 2
     fi
@@ -78,7 +78,7 @@ function check_existing()
   IP_NUM=$(echo "$IP_LIST" | wc -l)
 
   #Get number of existing MRJA masternode directories
-  DIR_COUNT=$(ls -la /root/ | grep "\.ganjacoin" | grep -c '^')
+  DIR_COUNT=$(ls -la /root/ | grep "\.mrja" | grep -c '^')
 
   #Check if there are more IPs than existing nodes
   if [[ $DIR_COUNT -ge $IP_NUM ]]; then
