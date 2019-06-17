@@ -9,22 +9,22 @@ https://www.ganjacoinpro.com/ <br />
 ![Image BlockSync](https://github.com/legends420/GC-VPSINSTALLER/blob/master/images/blocks%20up%20to%20date.png) </br>
 
 1.3 Encrypt your wallet! (Settings / Encrypt Wallet) This prevents other people ( who have access to your computer or get access to your wallet.dat file ) to get in your wallet. Don't lose that password. If you lose it the wallet is locked forever and nobobdy will be able to recover your funds. </br>
-![Image Encrypt](https://github.com/legends420/GC-VPSINSTALLER/blob/master/images/encrypt.png) </br>
+![Image Encrypt](https://github.com/legends420/Reliefcoin-VPS-INSTALLER/blob/master/images/encrypt.png) </br>
 
 1.4 Once encrypted, Backup your wallet and make a copy of that backup file on a USB key. </br>
-![Image backup](https://github.com/legends420/GC-VPSINSTALLER/blob/master/images/backup.png) </br>
+![Image backup](https://github.com/legends420/Reliefcoin-VPS-INSTALLER/blob/master/images/backup.png) </br>
 
 1.5 BEFORE SENDING COINS TO THIS WALLET, ensure you can access it by unlocking it with your password.  </br>
-![Image unlock](https://github.com/legends420/GC-VPSINSTALLER/blob/master/images/unlock.png) </br>
+![Image unlock](https://github.com/legends420/Reliefcoin-VPS-INSTALLER/blob/master/images/unlock.png) </br>
 
-1.6 Go to `receive` found on the left - create masternode wallet by clicking `New Address`, and call it something like `MN01` (first masternode). If this is not your first MRJA masternode, name it appropriately (ex.: `MN03` if it's your third) <br />
+1.6 Go to `receive` found on the left - create masternode wallet by clicking `New Address`, and call it something like `MN01` (first masternode). If this is not your first TGAO masternode, name it appropriately (ex.: `MN03` if it's your third) <br />
 
-1.7 Send EXACTLY 30,000 coins to the wallet address you've just created by right-clicking on that new address and clicking on `Copy Address` then going to the send tab and pasting that address in the `Pay To` field. Make sure that it's exactly 30000 - no more, no less.<br />
+1.7 Send EXACTLY 50,000 coins to the wallet address you've just created by right-clicking on that new address and clicking on `Copy Address` then going to the send tab and pasting that address in the `Pay To` field. Make sure that it's exactly 50000 - no more, no less.<br />
 
 1.8. Go to `Help / Debug Window / Console ` and type `masternode outputs` <br />
 
 1.9. Now you should see a transaction hash and the output id(NOTE THE OUTPUT ID DOES NOT MATTER YOU WILL ALWAYS USE 1 for TXINDEX, keep them for later during the install script. (Copy them to a notepad or text editor) <br />
-![Image txhash](https://github.com/legends420/GC-VPSINSTALLER/blob/master/images/txhash.png) </br>
+![Image txhash](https://github.com/legends420/Reliefcoin-VPS-INSTALLER/blob/master/images/txhash.png) </br>
 
 1.10. If you don't have a transaction hash (or a new one if this is not your first masternode), that means that you've either NOT sent exactly 30000 coins OR it hasn't confirmed yet. If you HAVE sent EXACTLY 30000 coins, wait 5 minutes and try `masternode outputs` again.
 
@@ -38,7 +38,7 @@ VPS server required: We recommend the following specifications:
 - Choose any location close to you for optimal connectivity to your server
 - Ubuntu 16.04.x64
 - Server (Name anything you want, i.e matrix)</br>
-![Image Vultr](https://github.com/legends420/GC-VPSINSTALLER/blob/master/images/vultr1.png) </br>
+![Image Vultr](https://github.com/legends420/Reliefcoin-VPS-INSTALLER/blob/master/images/vultr1.png) </br>
 
 2.2 Start an SSH session
 
@@ -67,7 +67,7 @@ Password: (vultr password)
 
 3.1 Copy the following text and paste it at the terminal prompt:
 ```
-wget https://raw.githubusercontent.com/legends420/GC-VPSINSTALLER/master/deploy.sh && chmod +x deploy.sh && ./deploy.sh
+wget https://raw.githubusercontent.com/legends420/Reliefcoin-VPS-INSTALLER/master/deploy.sh && chmod +x deploy.sh && ./deploy.sh
 ```
 
 3.2 Press `ENTER` Then Simply follow the on-screen instructions.
