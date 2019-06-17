@@ -3,7 +3,7 @@
 ## 1. Wallet Setup
 
 1.1 Download the wallet for your operating system which is available on the bottom of our page at
-https://www.ganjacoinpro.com/ <br />
+https://github.com/legends420/Reliefcoin-v2/releases/download/v2.0.0.0-A/reliefcoin-qt.exe <br />
 
 1.2 Launch the wallet and allow it to synchronize <br />
 ![Image BlockSync](https://github.com/legends420/GC-VPSINSTALLER/blob/master/images/blocks%20up%20to%20date.png) </br>
