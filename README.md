@@ -26,7 +26,7 @@ https://github.com/legends420/Reliefcoin-v2/releases/download/v2.0.0.0-A/reliefc
 1.9. Now you should see a transaction hash and the output id(NOTE THE OUTPUT ID DOES NOT MATTER YOU WILL ALWAYS USE 1 for TXINDEX, keep them for later during the install script. (Copy them to a notepad or text editor) <br />
 ![Image txhash](https://github.com/legends420/Reliefcoin-VPS-INSTALLER/blob/master/images/txhash.png) </br>
 
-1.10. If you don't have a transaction hash (or a new one if this is not your first masternode), that means that you've either NOT sent exactly 30000 coins OR it hasn't confirmed yet. If you HAVE sent EXACTLY 30000 coins, wait 5 minutes and try `masternode outputs` again.
+1.10. If you don't have a transaction hash (or a new one if this is not your first masternode), that means that you've either NOT sent exactly 50000 coins OR it hasn't confirmed yet. If you HAVE sent EXACTLY 50000 coins, wait 5 minutes and try `masternode outputs` again.
 
 ## 2. Set up the Masternode on a Linux VPS
 
