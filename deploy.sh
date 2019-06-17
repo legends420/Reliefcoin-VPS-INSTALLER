@@ -15,7 +15,7 @@ function set_environment()
   #Variable Declaration
   VERSION="2.0.0.0"
   PROJECT="Reliefcoin"
-  PROJECT_FOLDER="$HOME/ganja"
+  PROJECT_FOLDER="$HOME/reliefcoin"
   BINARY="reliefcoind"
   BINARYCLI="reliefcoin-cli"
   NEXT_AVAIL_IP=$(curl -s4 icanhazip.com)
@@ -35,7 +35,7 @@ function set_environment()
 
 function checks()
 {
-  # Checks if running at least Ubuntu 16.04, as root and no other Ganjacoin Masternode exists
+  # Checks if running at least Ubuntu 16.04, as root and no other Reliefcoin Masternode exists
   
   if [[ ($(lsb_release -d) != *16.04*) ]] && [[ ($(lsb_release -d) != *17.04*) ]]; then
       echo -e "${RED} You are not running Ubuntu 16.04 or 17.04. Installation is cancelled.${NC}"
@@ -216,7 +216,7 @@ EOF
       $DAEMON &
       sleep 60
 
-#      sed -i "s/server=1/server=0/" .GanjaCoin/ganjacoin.conf
+
     else
       echo -e "${RED}Binary not found! Please scroll up to see errors above : $RETVAL ${NC}"
       exit 1;
@@ -351,7 +351,7 @@ function start_wallet()
     echo -e "${BLUE} Once in that file, copy and paste the following information on a new line:${NC}"
     echo
     echo
-    echo -e "$MN_ALIAS $NEXT_AVAIL_IP:12311 $GENKEY $TX_ID $TX_OUTPUT"
+    echo -e "$MN_ALIAS $NEXT_AVAIL_IP:16000 $GENKEY $TX_ID $TX_OUTPUT"
     echo
     echo
     echo -e "${BLUE} Next, save the file and close it. Now restart your QT (Windows or Mac) wallet${YELLOW}"
