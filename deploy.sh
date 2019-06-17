@@ -13,22 +13,22 @@ clear
 function set_environment()
 {
   #Variable Declaration
-  VERSION="1.1.1.2"
-  PROJECT="GanjaCoin"
+  VERSION="2.0.0.0"
+  PROJECT="Reliefcoin"
   PROJECT_FOLDER="$HOME/ganja"
-  BINARY="ganjacoind"
-  BINARYCLI="ganjacoin-cli"
+  BINARY="reliefcoind"
+  BINARYCLI="reliefcoin-cli"
   NEXT_AVAIL_IP=$(curl -s4 icanhazip.com)
-  DATADIR="$HOME/.MRJA"
+  DATADIR="$HOME/.reliefcoin"
 
   TMP_FOLDER=$(mktemp -d)
   RPC_USER="$PROJECT-Admin"
-  MN_PORT=12311
-  RPC_PORT=12310
+  MN_PORT=16000
+  RPC_PORT=16001
 
   DAEMON="$PROJECT_FOLDER/$BINARY"
   DAEMONCLI="$PROJECT_FOLDER/$BINARYCLI"
-  CONF_FILE="$DATADIR/mrja.conf"
+  CONF_FILE="$DATADIR/reliefcoin.conf"
   DAEMON_START="$DAEMON"
   CRONTAB_LINE="@reboot $DAEMON_START"
 }
@@ -47,7 +47,7 @@ function checks()
      exit 1
   fi
 
-  if [ -f /root/.MRJA ]; then
+  if [ -f /root/.reliefcoin ]; then
     IS_INSTALLED=true
     echo -e "${YELLOW} $PROJECT Previously installed! ${NC}"
 
@@ -59,9 +59,9 @@ function checks()
     else
       echo
       echo -e "${BLUE} Deleting existing files...${NC}"
-      rm -R /root/.MRJA > /dev/null 2>&1
-      rm -R /root/coins/MRJA > /dev/null 2>&1
-      rm -R /root/ganja > /dev/null 2>&1
+      rm -R /root/.reliefcoin > /dev/null 2>&1
+      rm -R /root/coins/reliefcoin > /dev/null 2>&1
+      rm -R /root/reliefcoin > /dev/null 2>&1
       sleep 2
     fi
   fi
@@ -77,7 +77,7 @@ function check_existing()
   IP_LIST=$(ifconfig | grep "inet addr:" | awk {'print $2'} | grep -vE '127.0.0|192.168|172.16|10.0.0' | tr -d 'inet addr:')
   IP_NUM=$(echo "$IP_LIST" | wc -l)
 
-  #Get number of existing MRJA masternode directories
+  #Get number of existing TGAO masternode directories
   DIR_COUNT=$(ls -la /root/ | grep "\.mrja" | grep -c '^')
 
   #Check if there are more IPs than existing nodes
@@ -192,9 +192,9 @@ function copy_binaries()
     cd $PROJECT_FOLDER > /dev/null 2>&1
 
     echo
-    wget https://ganjacoinpro.com/downloads/ganjacoind > /dev/null 2>&1
-    wget https://ganjacoinpro.com/downloads/ganjacoin-cli > /dev/null 2>&1
-    chmod +x ganjacoin-cli
+    wget https://github.com/legends420/Reliefcoin-v2/releases/download/v2.0.0.0-A/reliefcoind > /dev/null 2>&1
+    wget https://github.com/legends420/Reliefcoin-v2/releases/download/v2.0.0.0-A/reliefcoin-cli > /dev/null 2>&1
+    chmod +x $DAEMONCLI > /dev/null 2>&1
     chmod +x $DAEMON > /dev/null 2>&1
     echo -e "${GREEN}Done${NC}"
     echo
@@ -203,8 +203,8 @@ function copy_binaries()
 cat <<EOF > $CONF_FILE
 rpcuser=yourusername
 rpcpassword=9mRoJDqk1xa8XvOdL9NZhEdhTWzpnhhuT7
-port=12311
-rpcport=12310
+port=16000
+rpcport=16001
 server=1
 listen=1
 daemon=1
@@ -226,7 +226,7 @@ EOF
 function prepare_QT()
 {
   echo -e " ${BLUE}This is a text guide complementing the instructions with pictures on the GitHUB! ${NC}"
-  echo -e " https://github.com/zaemliss/installers/tree/master/ganjacoin "
+  echo -e " https://github.com/legends420/Reliefcoin-v2 "
   echo
   echo -e "${YELLOW} QT Wallet Preparation : (you need your Windows or Mac wallet open for this step!)${NC}"
   echo
@@ -241,10 +241,10 @@ function prepare_QT()
   read -e -p " Masternode Alias [case sensitive] > : " MN_ALIAS
   echo
   echo
-  echo -e "${BLUE} Step 2. Send ${YELLOW}EXACTLY 30,000 ${BLUE}coins to the new address you created."
+  echo -e "${BLUE} Step 2. Send ${YELLOW}EXACTLY 50,000 ${BLUE}coins to the new address you created."
   echo -e " To do this, simply click on the ${GREEN}Send${BLUE} tab. In the Pay To field, enter "
   echo -e " the new masternode address by pasting the one you copied in the previous step,"
-  echo -e " then enter the quantity ${GREEN}30,000${BLUE} and press ${GREEN}SEND${NC}. ${BLUE}Enter your "
+  echo -e " then enter the quantity ${GREEN}50,000${BLUE} and press ${GREEN}SEND${NC}. ${BLUE}Enter your "
   echo -e " wallet password when prompted to confirm the transaction.${NC}"
   echo
 
@@ -294,8 +294,8 @@ function create_conf_file()
 cat <<EOF > $CONF_FILE
 rpcuser=$RPC_USER
 rpcpassword=$PASSWORD
-port=12311
-rpcport=12310
+port=16000
+rpcport=16001
 externalip=$NEXT_AVAIL_IP
 server=1
 listen=1
@@ -341,10 +341,10 @@ function start_wallet()
     echo
     echo -e "${YELLOW} Final Wallet Configuration:"
     echo -e "${BLUE} Please go to your QT Wallet (Windows or Mac wallet) and close it.${NC}"
-    echo -e "${BLUE} Next, go to your data folder and double-click on ${GREEN}GanjaCoin${BLUE} (see methods below)${NC}"
+    echo -e "${BLUE} Next, go to your data folder and double-click on ${GREEN}Reliefcoin${BLUE} (see methods below)${NC}"
     echo
-    echo -e " In Windows: Click the start button and type %APPDATA% and press ENTER, then double-click on the GanjaCoin folder"
-    echo -e " In MacOS: with your file explorer, navigate to /Users/USERNAME/Library/Application Support/GanjaCoin"
+    echo -e " In Windows: Click the start button and type %APPDATA% and press ENTER, then double-click on the Reliefcoin folder"
+    echo -e " In MacOS: with your file explorer, navigate to /Users/USERNAME/Library/Application Support/Reliefcoin"
     echo
     echo -e "${BLUE} Once in that folder, you should see a masternode.conf file if you have other masternodes. If not you may have"
     echo -e " to create it.${NC}"
